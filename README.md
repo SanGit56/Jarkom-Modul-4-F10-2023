@@ -40,6 +40,7 @@ auto eth0
 iface eth0 inet static
 	address 192.226.0.38
 	netmask 255.255.255.252
+	gateway 192.226.0.37
     
 # ke Switch2
 auto eth1
@@ -55,6 +56,7 @@ auto eth0
 iface eth0 inet static
 	address 192.226.0.2
 	netmask 255.255.255.252
+	gateway 192.226.0.1
     
 # ke Switch3
 auto eth1
@@ -76,6 +78,7 @@ auto eth0
 iface eth0 inet static
 	address 192.226.0.6
 	netmask 255.255.255.252
+	gateway 192.226.0.5
     
 # ke Fern
 auto eth1
@@ -103,6 +106,7 @@ auto eth0
 iface eth0 inet static
 	address 192.226.0.10
 	netmask 255.255.255.252
+	gateway 192.226.0.9
     
 # ke Switch4
 auto eth1
@@ -118,6 +122,7 @@ auto eth0
 iface eth0 inet static
 	address 192.226.0.14
 	netmask 255.255.255.252
+	gateway 192.226.0.13
     
 # ke Switch6
 auto eth1
@@ -133,6 +138,7 @@ auto eth0
 iface eth0 inet static
 	address 192.226.0.18
 	netmask 255.255.255.252
+	gateway 192.226.0.17
 
 # ke Switch1
 auto eth1
@@ -166,6 +172,7 @@ auto eth0
 iface eth0 inet static
 	address 192.226.0.30
 	netmask 255.255.255.252
+	gateway 192.226.0.29
     
 # ke Switch10
 auto eth1
@@ -187,6 +194,7 @@ auto eth0
 iface eth0 inet static
 	address 192.226.0.22
 	netmask 255.255.255.252
+	gateway 192.226.0.21
     
 # ke Switch11
 auto eth1
@@ -208,6 +216,7 @@ auto eth0
 iface eth0 inet static
 	address 192.226.0.26
 	netmask 255.255.255.252
+	gateway 192.226.0.25
     
 # ke Switch7
 auto eth1
@@ -223,6 +232,7 @@ auto eth0
 iface eth0 inet static
 	address 192.226.0.130
 	netmask 255.255.255.192
+	gateway 192.226.0.129
     
 # ke Switch8
 auto eth1
