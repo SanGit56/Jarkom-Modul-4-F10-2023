@@ -256,7 +256,7 @@ iface eth0 inet static
 ```
 auto eth0
 iface eth0 inet static
-	address 192.226.0.65
+	address 192.226.0.66
 	netmask 255.255.255.224
 	gateway 192.226.0.65
     up echo nameserver 192.168.122.1 > /etc/resolv.conf
