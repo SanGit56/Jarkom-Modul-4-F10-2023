@@ -239,6 +239,7 @@ iface eth0 inet static
 	address 192.226.1.2
 	netmask 255.255.255.0
 	gateway 192.226.1.1
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### WilleRegion
@@ -248,6 +249,7 @@ iface eth0 inet static
 	address 192.226.1.3
 	netmask 255.255.255.0
 	gateway 192.226.1.1
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### LakeKorridor
@@ -257,6 +259,7 @@ iface eth0 inet static
 	address 192.226.0.65
 	netmask 255.255.255.224
 	gateway 192.226.0.65
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### LaubHills
@@ -266,6 +269,7 @@ iface eth0 inet static
 	address 192.226.24.2
 	netmask 255.255.248.0
 	gateway 192.226.24.1
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### AppetitRegion
@@ -275,6 +279,7 @@ iface eth0 inet static
 	address 192.226.24.3
 	netmask 255.255.248.0
 	gateway 192.226.24.1
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### RohrRoad
@@ -284,6 +289,7 @@ iface eth0 inet static
 	address 192.226.16.2
 	netmask 255.255.252.0
 	gateway 192.226.16.1
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### SchwerMountains
@@ -293,6 +299,7 @@ iface eth0 inet static
 	address 192.226.0.50
 	netmask 255.255.255.248
 	gateway 192.226.0.49
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### Richter
@@ -302,6 +309,7 @@ iface eth0 inet static
 	address 192.226.0.42
 	netmask 255.255.255.248
 	gateway 192.226.0.41
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### Revolte
@@ -311,6 +319,7 @@ iface eth0 inet static
 	address 192.226.0.43
 	netmask 255.255.255.248
 	gateway 192.226.0.41
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### Stark
@@ -320,6 +329,7 @@ iface eth0 inet static
 	address 192.226.0.34
 	netmask 255.255.255.252
 	gateway 192.226.0.33
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### TurkRegion
@@ -329,6 +339,7 @@ iface eth0 inet static
 	address 192.226.12.2
 	netmask 255.255.255.0
 	gateway 192.226.12.1
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### GrobeForest
@@ -338,6 +349,7 @@ iface eth0 inet static
 	address 192.226.2.2
 	netmask 255.255.255.0
 	gateway 192.226.2.1
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### GranzChannel
@@ -347,6 +359,7 @@ iface eth0 inet static
 	address 192.226.2.2
 	netmask 255.255.254.0
 	gateway 192.226.4.1
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### BredtRegion
@@ -356,12 +369,14 @@ iface eth0 inet static
 	address 192.226.0.131
 	netmask 255.255.255.192
 	gateway 192.226.0.129
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 
 auto br0
 iface br0 inet static
     address 192.226.0.130
     netmask 255.255.255.192
     gateway 192.226.0.130
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
     bridge_ports eth0
 ```
 
@@ -372,6 +387,7 @@ iface eth0 inet static
 	address 192.226.8.2
 	netmask 255.255.252.0
 	gateway 192.226.8.1
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### Sein
@@ -381,4 +397,5 @@ iface eth0 inet static
 	address 192.226.8.3
 	netmask 255.255.252.0
 	gateway 192.226.8.1
+    up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
