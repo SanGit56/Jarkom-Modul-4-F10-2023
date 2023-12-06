@@ -9,11 +9,29 @@ Thoriq Afif Habibi | 5025211154
 Radhiyan Muhammad Hisan | 5025211166
 
 # Daftar Isi
+- [Soal](#soal)
+- [Pembagian Subnet](#pembagian-subnet)
 - [Konfigurasi VLSM](#konfigurasi-vlsm)
   - [Router](#router)
   - [Endpoint](#endpoint)
   - [Routing](#routing)
-- [Konfigurasi CIDR](#konfigurasi-cidr)
+- [CIDR](#konfigurasi-cidr)
+  - [Subnetting](subnetting)
+  - [Routing](routing)
+
+# Soal
+![topologi](./img/topo.png)
+1. Soal shift dikerjakan pada Cisco Packet Tracer dan GNS3 menggunakan metode perhitungan CLASSLESS yang berbeda.
+	<br>Keterangan: Bila di CPT menggunakan VLSM, maka di GNS3 menggunakan CIDR atau sebaliknya
+2. Jika tidak ada pemberitahuan revisi soal dari asisten, berarti semua soal BERSIFAT BENAR dan DAPAT DIKERJAKAN.
+3. Untuk di GNS3 CLOUD merupakan NAT1 jangan sampai salah agar bisa terkoneksi internet.
+4. Pembagian IP menggunakan Prefix IP yang telah ditentukan pada modul pengenalan
+5. Pembagian IP dan routing harus SE-EFISIEN MUNGKIN.
+
+# Pembagian Subnet
+Sebelum melakukan pembagian IP dengan menggunakan metode perhitungan Classless, perlu dilakukan pembagian dan penamaan subnet terlebih dahulu. Penamaan dilakukan dengan tujuan untuk mempermudah melakukan perhitungan. Berikut pembagian dan penamaan subnet yang menjadi dasar perhitungan VLSM dan CIDR:
+![tabel-subnet](./img/tabel-subnet.png)<br>
+![pembagian-subnet](./img/subnet.jpeg)
 
 # Konfigurasi VLSM
 ![tree vlsm](./F10_Tree-VLSM.jpg)
@@ -569,4 +587,47 @@ route add -net 0.0.0.0 netmask 0.0.0.0 gw 192.226.0.129
 ```
 
 # Konfigurasi CIDR
+
+## Subnetting
+Pada metode CIDR, pembagian IP untuk tiap subnet dilakukan dengan menggabungkan subnet terjauh dari router yang terhubung ke NAT (Aura) dengan subnet sebelahnya. Penggabungan dilakukan terus hingga didapatkan 1 subnet besar yang mencakup seluruh subnet yang ada. Proses penggabungan subnet ini dapat dilihat dari tabel berikut:
+
+I. <br>![gabung1](img/merge1.png)<br>
+II. <br>![Alt text](img/merge2.png)<br>
+III. <br>![Alt text](img/merge3.png)<br>
+IV. <br>![Alt text](img/merge4.png)<br>
+V. <br>![Alt text](img/merge5.png)<br>
+VI. <br>![Alt text](img/merge6.png)<br>
+VII. <br>![Alt text](img/merge7.png)<br>
+
+Dari proses penggabungan subnet di atas, perhitungan IP kemudian dilakukan dengan membuat pohon IP yang rootnya merupakan IP untuk subnet terbesar. Karena subnet terbesar menggunakan netmask /16, maka IP pada root tree adalah `192.226.0.0 /16`. Selanjutnya root dipecah menjadi 2 berdasarkan subnet gabungannya. Karena subnet besar merupakan gabungan 2 subnet dengan netmask /17, maka root dipecah menjadi 2 node dengan IP `192.226.0.0 /17` dan `192.226.128.0 /17`. Proses ini dilakukan hingga tiap subnet kecil mendapatkan IP. Berikut IP tree yang telah kami buat untuk menentukan IP tiap subnet:
+
 ![tree cidr](./F10_Tree-CIDR.jpg)
+
+IP tiap subnet dapat dilihat lebih detail di tabel berikut: <br>
+![ip-cidr](img/ip-cidr.png)
+
+## Routing
+Untuk melakukan routing, kami hanya mendaftarkan secara manual rute ke subnet yang berarah menjauhi aura dengan next hop router terdekat yang mengarah ke subnet tujuan. Selain itu, untuk subnet yang berarah mendekati aura, kami menggunakan default routing (0.0.0.0) dengan next hop router terdekat yang mengarah ke aura. Untuk lebih lengkapnya, berikut routing yang telah kami buat:
+
+1. Aura (semua subnet kecuali A1, A9, dan A20)
+![cidr-aura](cidr-routing-1.png)
+2. Frieren
+![cidr-frieren](cidr-routing-2.png)
+3. Flamme
+![cidr-flamme](cidr-routing-3.png)
+4. Fern
+![cidr-fern](cidr-routing-4.png)
+5. Himmel
+![cidr-himmel](cidr-routing-5.png)
+6. Denken
+![cidr-denken](cidr-routing-6.png)
+7. Eisen
+![cidr-eisen](cidr-routing-7.png)
+8. Lugner
+![cidr-lugner](cidr-routing-8.png)
+9. Linie
+![cidr-linie](cidr-routing-9.png)
+10. Lawine
+![cidr-lawine](cidr-routing-10.png)
+11. Heiter
+![cidr-heiter](cidr-routing-11.png)
